@@ -1,0 +1,79 @@
+{
+  "_comment": "Product stage: one real photo per ingredient, shown as a full-height panel on the side opposite the text. 'position' = CSS object-position (which part of the photo stays visible). Current photos: Unsplash License (free for commercial use, no attribution required — credited here anyway). To swap one, drop a new file in /public/assets/stage and change 'src'. If any 'src' is empty the old 3D scene is used instead. Optional dim (0-1) darkens a photo behind text-heavy sections.",
+  "shots": [
+    {
+      "beat": "inicio",
+      "src": "/assets/stage/00-copa.jpg",
+      "position": "50% 45%",
+      "alt": "Copa de cristal vacía con luz de contorno sobre fondo negro",
+      "credit": "unsplash.com/photos/RhnFYV7sPy8"
+    },
+    {
+      "beat": "sobre-mi",
+      "src": "/assets/stage/01-hielo.jpg",
+      "position": "50% 40%",
+      "alt": "Un cubito de hielo cae dentro de un vaso",
+      "credit": "unsplash · photo-1618429465907"
+    },
+    {
+      "beat": "proyectos",
+      "src": "/assets/stage/02-licor.jpg",
+      "position": "48% 50%",
+      "alt": "Licor rojo vertiéndose sobre hielo",
+      "credit": "unsplash · photo-1673993446290",
+      "dim": 0.8
+    },
+    {
+      "beat": "webs",
+      "src": "/assets/stage/03-tonica.jpg",
+      "position": "50% 50%",
+      "alt": "Gin tonic con burbujas en copa balón",
+      "credit": "unsplash · photo-1617524455170",
+      "dim": 0.8
+    },
+    {
+      "beat": "arsenal",
+      "src": "/assets/stage/04-removedor.jpg",
+      "position": "45% 60%",
+      "alt": "Bartender removiendo un cóctel con cucharilla de bar",
+      "credit": "unsplash · photo-1579705088352"
+    },
+    {
+      "beat": "experiencia",
+      "src": "/assets/stage/05-citrico.jpg",
+      "position": "60% 50%",
+      "alt": "Cócteles con rodaja de pomelo en el borde",
+      "credit": "unsplash · photo-1581646835455"
+    },
+    {
+      "beat": "formacion",
+      "src": "/assets/stage/06-escarchado.jpg",
+      "position": "50% 40%",
+      "alt": "Cóctel rosa con el borde escarchado de azúcar",
+      "credit": "unsplash · photo-1588134034989"
+    },
+    {
+      "beat": "videos",
+      "src": "/assets/stage/07-condensacion.jpg",
+      "position": "50% 50%",
+      "alt": "Gotas de condensación sobre cristal frío",
+      "credit": "unsplash · photo-1509762552031",
+      "dim": 0.8
+    },
+    {
+      "beat": "fotos",
+      "src": "/assets/stage/08-atmosfera.jpg",
+      "position": "50% 45%",
+      "alt": "Cóctel rosa con espuma en penumbra",
+      "credit": "unsplash · photo-1746785011420",
+      "dim": 0.55
+    },
+    {
+      "beat": "contacto",
+      "src": "/assets/stage/09-servida.jpg",
+      "position": "50% 40%",
+      "alt": "Cóctel terminado servido sobre fondo negro",
+      "credit": "unsplash · photo-1746785011465"
+    }
+  ]
+}

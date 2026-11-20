@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+scratch-media.log
+# raw source media (heavy) — web versions live in /public/assets
+Vídeos/*.mov
+Vídeos/*.mp4
+# material de trabajo local (no hace falta para la web)
+Vídeos/
+media-src/
+Webs/
+Instrucciones para claude/
+.playwright-mcp/

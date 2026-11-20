@@ -1,0 +1,44 @@
+{
+  "studies": [
+    {
+      "id": "marketing",
+      "title": "Grado Superior en Marketing y Publicidad",
+      "center": "Izquierdo FP",
+      "period": "En curso",
+      "status": "current",
+      "description": "Estrategia, campañas, investigación de mercados, comunicación de marca y medios digitales.",
+      "highlights": [
+        "Estrategia de contenidos",
+        "Campañas publicitarias",
+        "Marketing digital"
+      ]
+    },
+    {
+      "id": "impresion",
+      "title": "Grado Medio en Impresión Gráfica",
+      "center": "IES Pilar Lorengar",
+      "period": "Finalizado",
+      "status": "done",
+      "description": "Producción gráfica, preimpresión, procesos de impresión y acabados. La base técnica de todo lo que diseño.",
+      "highlights": [
+        "Preimpresión",
+        "Producción gráfica",
+        "Color y acabados"
+      ]
+    }
+  ],
+  "training": [
+    {
+      "title": "Suite Adobe Creative Cloud",
+      "note": "Photoshop, Illustrator, Premiere Pro"
+    },
+    {
+      "title": "IA generativa y automatización",
+      "note": "Formación autodidacta aplicada a proyectos reales"
+    },
+    {
+      "title": "Desarrollo web asistido por IA",
+      "note": "Claude Code, prototipado y despliegue"
+    }
+  ]
+}

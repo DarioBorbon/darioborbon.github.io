@@ -1,0 +1,89 @@
+[
+  {
+    "id": "la-encantadora",
+    "title": "La Encantadora",
+    "category": "Negocio propio · Marca y redes",
+    "year": "2024 — hoy",
+    "description": "Gestión del local en Zaragoza: comunicación de marca, piezas gráficas para eventos y promociones, contenido para Instagram y vídeos promocionales como la campaña de cumpleaños.",
+    "role": "Gestión, dirección creativa y redes sociales",
+    "tools": [
+      "Photoshop",
+      "Canva",
+      "Premiere Pro",
+      "Instagram",
+      "ChatGPT"
+    ],
+    "cover": {
+      "src": "/assets/videos/encantadora-cumples.jpg",
+      "alt": "Fotograma del vídeo promocional de cumpleaños de La Encantadora",
+      "position": "50% 30%"
+    },
+    "link": {
+      "label": "Ver en Instagram",
+      "url": "https://www.instagram.com/la_encantadora_casco/"
+    }
+  },
+  {
+    "id": "la-encantadora-fc",
+    "title": "La Encantadora FC",
+    "category": "Proyecto propio · Identidad visual",
+    "year": "Proyecto propio",
+    "description": "Creé el equipo y su universo visual: identidad, carteles de partidos y resultados, planificación de contenido en Instagram y la web oficial.",
+    "role": "Fundador, identidad visual y community management",
+    "tools": [
+      "Illustrator",
+      "Photoshop",
+      "Canva",
+      "Claude Code",
+      "Netlify"
+    ],
+    "cover": {
+      "src": "/assets/websites/laencantadorafc.jpg",
+      "alt": "Captura de la web de La Encantadora FC"
+    },
+    "link": {
+      "label": "Ver la web",
+      "url": "https://laencantadorafc.netlify.app"
+    }
+  },
+  {
+    "id": "mori-sushi",
+    "title": "Mori Sushi",
+    "category": "Diseño web · Encargo de cliente",
+    "year": "Web",
+    "description": "Web encargada por un restaurante japonés de buffet libre en Zaragoza: intro animada, estética de lujo en negro y dorado, carta y reservas desde la portada. El cliente no llegó a usarla, pero la propuesta está completa y publicada.",
+    "role": "Diseño y desarrollo web asistido por IA",
+    "tools": [
+      "Claude Code",
+      "HTML/CSS",
+      "Netlify"
+    ],
+    "cover": {
+      "src": "/assets/websites/morisushi.jpg",
+      "alt": "Captura de la web de Mori Sushi"
+    },
+    "link": {
+      "label": "Ver la web",
+      "url": "https://morisushi.netlify.app"
+    }
+  },
+  {
+    "id": "portfolio-copa",
+    "title": "Este portfolio",
+    "category": "Experiencia interactiva 3D",
+    "year": "2026",
+    "description": "Una copa que se construye ingrediente a ingrediente mientras haces scroll. Next.js, three.js y shaders propios, desarrollado con Claude Code.",
+    "role": "Concepto, dirección de arte y desarrollo con IA",
+    "tools": [
+      "Claude Code",
+      "Next.js",
+      "three.js",
+      "Tailwind"
+    ],
+    "cover": {
+      "src": "",
+      "alt": "Copa de cóctel renderizada en 3D"
+    },
+    "link": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "la-encantadora",
+    "company": "La Encantadora",
+    "location": "Zaragoza",
+    "role": "Gestión del negocio, redes sociales y atención al cliente",
+    "period": "Sept. 2024 — actualidad",
+    "current": true,
+    "type": "Negocio",
+    "bullets": [
+      "Gestión del local, organización de campañas, eventos y promociones.",
+      "Creación de piezas gráficas, publicaciones y vídeos para promocionar el local.",
+      "Atención al público y trabajo en equipo en hostelería."
+    ]
+  },
+  {
+    "id": "la-encantadora-fc",
+    "company": "La Encantadora FC",
+    "location": "Zaragoza",
+    "role": "Creador del proyecto y responsable de Instagram",
+    "period": "Proyecto propio",
+    "current": true,
+    "type": "Proyecto propio",
+    "bullets": [
+      "Gestión de la cuenta y planificación del contenido del equipo.",
+      "Diseño de carteles de partidos, resultados y publicaciones promocionales.",
+      "Desarrollo de la identidad visual y de la web oficial."
+    ]
+  },
+  {
+    "id": "ara-printer",
+    "company": "Ara Printer",
+    "location": "Zaragoza",
+    "role": "Prácticas de formación · Diseño",
+    "period": "Prácticas",
+    "current": false,
+    "type": "Diseño",
+    "bullets": ["Tareas de diseño gráfico y preparación de archivos para impresión."]
+  },
+  {
+    "id": "graficas-z",
+    "company": "Gráficas Z",
+    "location": "Zaragoza",
+    "role": "Prácticas de formación · Operario de impresión",
+    "period": "Prácticas",
+    "current": false,
+    "type": "Impresión",
+    "bullets": ["Experiencia como operario en producción gráfica e impresión."]
+  }
+]

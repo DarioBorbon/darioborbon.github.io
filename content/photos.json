@@ -1,0 +1,18 @@
+[
+  {
+    "id": "retrato-otono",
+    "src": "/assets/photos/IMG_0076.jpg",
+    "alt": "Darío sonriendo con sudadera verde y capucha, árboles amarillos de otoño al fondo",
+    "caption": "Otoño",
+    "credit": "",
+    "aspect": "4/5"
+  },
+  {
+    "id": "retrato-columna",
+    "src": "/assets/photos/IMG_2368.jpg",
+    "alt": "Darío apoyado en una columna, camiseta negra, luz natural",
+    "caption": "Retrato editorial",
+    "credit": "",
+    "aspect": "2/3"
+  }
+]

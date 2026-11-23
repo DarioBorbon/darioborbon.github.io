@@ -4,21 +4,23 @@ import { Cursor } from "@/components/ui/Cursor";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
-import { Websites } from "@/components/sections/Websites";
+import { AISection } from "@/components/sections/AI";
 import { Arsenal } from "@/components/sections/Arsenal";
 import { ExperienceSection } from "@/components/sections/Experience";
 import { EducationSection } from "@/components/sections/Education";
 import { Videos } from "@/components/sections/Videos";
 import { Photos } from "@/components/sections/Photos";
-import { Contact } from "@/components/sections/Contact";
-
+import { Contact, SiteFooter } from "@/components/sections/Contact";
+import { homeJsonLd, ld } from "@/lib/seo";
 
 /**
  * The page is the recipe. Section order = ingredient order (lib/story.ts).
+ * All content is server-rendered HTML; the footage behind it is decoration.
  */
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ld(homeJsonLd())} />
       <SceneMount />
       <Chrome />
       <Cursor />
@@ -27,7 +29,7 @@ export default function Page() {
         <Hero />
         <About />
         <Projects />
-        <Websites />
+        <AISection />
         <Arsenal />
         <ExperienceSection />
         <EducationSection />
@@ -35,6 +37,7 @@ export default function Page() {
         <Photos />
         <Contact />
       </main>
+      <SiteFooter />
     </>
   );
 }

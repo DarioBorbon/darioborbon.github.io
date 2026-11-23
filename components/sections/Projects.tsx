@@ -1,67 +1,92 @@
-import { projects } from "@/lib/content";
+"use client";
+
+import { useState } from "react";
+import { projects, PROJECT_TAGS } from "@/lib/content";
+import type { ProjectTag } from "@/lib/types";
 import { Beat, BeatHeader } from "@/components/ui/Beat";
 import { Reveal } from "@/components/ui/Reveal";
 import { Media } from "@/components/ui/Media";
 import { Icon } from "@/components/ui/Icon";
-import { SampleTag } from "@/components/ui/SampleTag";
+import { SmartLink } from "@/components/ui/SmartLink";
 
-/** 02 · LICOR — the projects that give the drink its character. */
+const FILTERS: { id: "all" | ProjectTag; label: string }[] = [
+  { id: "all", label: "Todos" },
+  ...Object.entries(PROJECT_TAGS).map(([id, label]) => ({ id: id as ProjectTag, label })),
+];
+
+/**
+ * 02 · CÍTRICO — the work. One card per project (no repeats elsewhere);
+ * each card leads to its own indexable case-study page.
+ * The filter only hides cards visually: every project stays in the HTML.
+ */
 export function Projects() {
+  const [filter, setFilter] = useState<(typeof FILTERS)[number]["id"]>("all");
+  const visible = (tags: ProjectTag[]) => filter === "all" || tags.includes(filter);
+  const count = projects.filter((p) => visible(p.tags)).length;
+
   return (
     <Beat id="proyectos" wide>
       <BeatHeader
         id="proyectos"
-        title={<>Mis <em>proyectos</em></>}
-        lede="Marcas propias, negocio real y piezas digitales. Cada proyecto es un sabor distinto de la misma forma de trabajar."
+        title={<>Proyectos <em>destacados</em></>}
+        lede="Negocio real, marca propia y propuestas web. Cada proyecto tiene su caso de estudio: qué necesitaba, qué hice y qué resultado se puede comprobar."
       />
-      <div className="grid gap-5 md:grid-cols-2">
-        {projects.map((p, i) => {
-          const Wrapper = p.link ? "a" : "div";
-          return (
-            <Reveal key={p.id} i={i % 2} className={i === 0 ? "md:col-span-2" : ""}>
-              <Wrapper
-                {...(p.link ? { href: p.link.url, target: "_blank", rel: "noreferrer" } : {})}
-                className="card card-hover group block h-full p-3"
-              >
-                <Media
-                  src={p.cover.src}
-                  alt={p.cover.alt}
-                  aspect={i === 0 ? "21/9" : "16/10"}
-                  position={p.cover.position}
-                  label={p.category}
-                  sizes="(min-width: 900px) 40vw, 92vw"
-                />
-                <div className="px-3 pb-3 pt-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="mono text-[10px] uppercase tracking-label text-bone-dim">
-                        {p.category} · {p.year}
-                      </p>
-                      <h3 className="display mt-2 text-[2rem] leading-none">{p.title}</h3>
-                    </div>
-                    {p.link && (
-                      <span className="mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 text-bone-muted transition-colors duration-300 group-hover:border-rose/50 group-hover:text-bone">
-                        <Icon name="arrow" className="arrow h-4 w-4" />
-                        <span className="sr-only">{p.link.label} (se abre en otra pestaña)</span>
-                      </span>
-                    )}
-                  </div>
-                  <p className="body-copy mt-3 text-sm">{p.description}</p>
-                  <p className="mt-3 text-xs text-bone-dim">
-                    <span className="text-bone-muted">Rol:</span> {p.role}
-                  </p>
-                  <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Herramientas">
-                    {p.tools.map((t) => (
-                      <li key={t} className="chip">{t}</li>
-                    ))}
-                  </ul>
-                  {p.sample && <SampleTag />}
-                </div>
-              </Wrapper>
-            </Reveal>
-          );
-        })}
+
+      <div role="group" aria-label="Filtrar proyectos por área" className="-mx-1 mb-8 flex flex-wrap gap-2 px-1">
+        {FILTERS.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            aria-pressed={filter === f.id}
+            onClick={() => setFilter(f.id)}
+            className={`chip chip-link min-h-10 px-4 ${filter === f.id ? "!border-rose/60 !text-bone" : ""}`}
+          >
+            {f.label}
+          </button>
+        ))}
+        <p className="sr-only" aria-live="polite">{count} proyectos</p>
       </div>
+
+      <ul className="grid gap-5 md:grid-cols-2">
+        {projects.map((p, i) => (
+          <Reveal
+            as="li"
+            key={p.slug}
+            i={i % 2}
+            hidden={!visible(p.tags)}
+            className={i === 0 && filter === "all" ? "md:col-span-2" : ""}
+          >
+            <article className="card card-hover group relative flex h-full flex-col p-3 focus-within:border-rose/60">
+              <Media
+                src={p.cover.src}
+                alt={p.cover.alt}
+                aspect={i === 0 && filter === "all" ? "21/9" : "16/10"}
+                position={p.cover.position}
+                sizes={i === 0 ? "(min-width: 900px) 60vw, 92vw" : "(min-width: 900px) 30vw, 92vw"}
+              />
+              <div className="flex flex-1 flex-col px-3 pb-3 pt-5">
+                <p className="mono text-[10px] uppercase tracking-label text-bone-dim">
+                  {p.category}{p.year ? ` · ${p.year}` : ""}
+                </p>
+                <h3 className="display mt-2 text-[2rem] leading-none">
+                  <SmartLink href={`/proyectos/${p.slug}/`} className="after:absolute after:inset-0 after:rounded-[inherit] focus-visible:outline-none">
+                    {p.title}
+                  </SmartLink>
+                </h3>
+                <p className="body-copy mt-3 text-sm">{p.summary}</p>
+                <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Áreas">
+                  {p.tags.map((t) => (
+                    <li key={t} className="chip">{PROJECT_TAGS[t]}</li>
+                  ))}
+                </ul>
+                <p className="mt-auto flex items-center gap-2 pt-5 text-sm text-rose-soft">
+                  Ver caso de estudio <Icon name="arrow" className="arrow h-3.5 w-3.5" />
+                </p>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </ul>
     </Beat>
   );
 }

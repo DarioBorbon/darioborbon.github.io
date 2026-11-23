@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         ink: { DEFAULT: "#050506", 900: "#08080a", 800: "#0e0e11", 700: "#16161a", 600: "#222228" },
-        bone: { DEFAULT: "#f4efe9", muted: "#b9b2ab", dim: "#7d7771" },
+        bone: { DEFAULT: "#f4efe9", muted: "#b9b2ab", dim: "#8c867f" },
         rose: { DEFAULT: "#ff3d8b", soft: "#ff8fb8", deep: "#b0165a", glow: "#ff5c9d" },
       },
       fontFamily: {

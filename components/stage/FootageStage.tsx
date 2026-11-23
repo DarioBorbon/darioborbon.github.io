@@ -51,7 +51,11 @@ export default function FootageStage() {
     const frames: (HTMLImageElement | null)[] = new Array(TOTAL).fill(null);
     let cancelled = false;
 
-    /* ---- progressive loading: first slice now, the rest in order ---- */
+    /* ---- progressive loading ----
+     * Only the opening shot loads up front (enough to reveal the page); the
+     * rest streams in order, a little ahead of where the reader is, so a
+     * visitor who never scrolls does not download the whole sequence.
+     * Save-Data / 2G: the sequence keeps loading only as the reader scrolls. */
     const load = (n: number) =>
       new Promise<void>((resolve) => {
         const img = new Image();
@@ -63,16 +67,28 @@ export default function FootageStage() {
         img.onerror = () => resolve();
         img.src = src(n);
       });
-    (async () => {
-      await Promise.all(Array.from({ length: 24 }, (_, n) => load(n)));
-      if (cancelled) return;
-      setPrefs({ ready: true });
-      let next = 24;
-      const worker = async () => {
-        while (!cancelled && next < TOTAL) await load(next++);
-      };
-      await Promise.all(Array.from({ length: 6 }, worker));
-    })();
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    const lean = !!conn && (conn.saveData === true || /2g/.test(conn.effectiveType ?? ""));
+    const AHEAD = lean ? 24 : 70;
+    let next = 0;
+    let want = 20;          // load frames [0, want)
+    let inflight = 0;
+    const pump = () => {
+      while (!cancelled && inflight < 4 && next < Math.min(TOTAL, want)) {
+        const n = next++;
+        inflight++;
+        load(n).then(() => {
+          inflight--;
+          if (n === 8 && !getPrefs().ready) setPrefs({ ready: true });
+          pump();
+        });
+      }
+    };
+    const need = (frame: number) => {
+      const w = Math.min(TOTAL, Math.ceil(frame) + AHEAD);
+      if (w > want) { want = w; pump(); }
+    };
+    pump();
 
     /* ---- story position (same maths as the sections) ---- */
     let sections: { top: number; height: number }[] = [];
@@ -218,6 +234,7 @@ export default function FootageStage() {
       const sway = (Math.sin(clock * 2.1) * 2.2 + Math.sin(clock * 0.83 + 1.3) * 1.3) * idle;
 
       const f = Math.min(TOTAL - 1.001, Math.max(0, frameAt(s) + sway));
+      need(Math.max(f, frameAt(t)));
       let n = Math.floor(f);
       while (n > 0 && !frames[n]) n--;
       const a = frames[n + 1] ? f - Math.floor(f) : 0;

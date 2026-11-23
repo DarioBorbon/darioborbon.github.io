@@ -5,6 +5,7 @@ import { skills } from "@/lib/content";
 import type { SkillCategory } from "@/lib/types";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/Icon";
+import { SmartLink } from "@/components/ui/SmartLink";
 import { beatIndex, pad2 } from "@/lib/story";
 
 /**
@@ -16,8 +17,8 @@ import { beatIndex, pad2 } from "@/lib/story";
  */
 const ORBIT: { x: number; y: number }[] = [
   // positions around the centred glass (% of the orbit box)
-  { x: 24, y: 14 }, { x: 10, y: 50 }, { x: 24, y: 86 },
-  { x: 76, y: 14 }, { x: 90, y: 50 }, { x: 76, y: 86 },
+  { x: 22, y: 16 }, { x: 8, y: 50 }, { x: 22, y: 84 },
+  { x: 80, y: 28 }, { x: 80, y: 72 },
 ];
 
 export function Arsenal() {
@@ -30,7 +31,7 @@ export function Arsenal() {
     <section id="arsenal" data-beat="arsenal" data-glass="center" aria-labelledby="arsenal-title" className="relative z-[1] lg:h-[300vh]">
       <div className="beat lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-center lg:!py-0">
         <div className="beat-inner w-full lg:pt-16">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-6">
+          <div className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-6">
             {/* left: header + statement */}
             <div>
               <Reveal className="eyebrow mb-6">
@@ -39,14 +40,14 @@ export function Arsenal() {
                 <span className="rule" />
                 <span>Ingrediente · La mezcla</span>
               </Reveal>
-              <Reveal as="h2" i={1} id="arsenal-title" className="title !text-[clamp(2.6rem,4.4vw,4.5rem)]">
-                Mi arsenal <em>creativo</em>
+              <Reveal as="h2" i={1} id="arsenal-title" className="title hyphens-auto break-words !text-[clamp(2.3rem,4.4vw,4.5rem)]">
+                Habilidades y <em>herramientas</em>
               </Reveal>
               <Reveal as="blockquote" i={2} className="mt-8 border-l border-rose/60 pl-5">
                 <p className="display text-[1.45rem] leading-snug text-bone/95">“{skills.statement}”</p>
               </Reveal>
               <Reveal as="p" i={3} className="body-copy mt-6 max-w-sm text-sm">
-                Diseño, marketing, vídeo, web, gestión e IA, mezclados en la misma copa. Selecciona una competencia para ver herramientas y ejemplos reales.
+                Selecciona una competencia para ver las herramientas que uso, lo que sé hacer y dónde lo he aplicado. La IA tiene su propia sección.
               </Reveal>
             </div>
 
@@ -66,7 +67,7 @@ export function Arsenal() {
                   setActive(next.id);
                   document.getElementById(`tab-${next.id}`)?.focus();
                 }}
-                className="flex gap-2 overflow-x-auto pb-2 lg:relative lg:block lg:h-[min(64vh,560px)] lg:overflow-visible lg:pb-0"
+                className="flex flex-wrap gap-2 lg:relative lg:block lg:h-[min(64vh,560px)] lg:overflow-visible lg:pb-0"
               >
                 {skills.categories.map((c, i) => (
                   <OrbitChip key={c.id} c={c} i={i} active={c.id === active} onSelect={() => setActive(c.id)} />
@@ -108,8 +109,7 @@ function OrbitChip({ c, i, active, onSelect }: { c: SkillCategory; i: number; ac
           <Icon name={c.icon} className="h-3.5 w-3.5" />
         </span>
         {c.short}
-        {c.featured && <span className="ml-1 h-1.5 w-1.5 rounded-full bg-rose shadow-[0_0_10px_#ff3d8b]" aria-label="Competencia destacada" />}
-      </button>
+              </button>
     </Reveal>
     </div>
   );
@@ -170,12 +170,11 @@ function Panel({ c }: { c: SkillCategory }) {
           <p className="mono mb-2 text-[10px] uppercase tracking-label text-bone-dim">Dónde lo he aplicado</p>
           <ul className="space-y-1.5">
             {c.examples.map((e) => {
-              const external = e.href.startsWith("http");
               return (
                 <li key={e.label}>
-                  <a href={e.href} {...(external ? { target: "_blank", rel: "noreferrer" } : {})} className="link-u text-sm text-bone hover:text-rose-soft">
+                  <SmartLink href={e.href} className="link-u inline-flex min-h-8 items-center gap-1 text-sm text-bone hover:text-rose-soft">
                     {e.label} <Icon name="arrow" className="arrow h-3 w-3" />
-                  </a>
+                  </SmartLink>
                 </li>
               );
             })}

@@ -20,14 +20,14 @@ export type Beat = {
 
 export const STORY: Beat[] = [
   { id: "inicio",      nav: "Inicio",      ingredient: "La copa",       glass: "right",  inNav: false },
-  { id: "sobre-mi",    nav: "Quién soy",   ingredient: "Hielo",         glass: "left",   inNav: true },
-  { id: "proyectos",   nav: "Proyectos",   ingredient: "Cítrico",         glass: "right",  inNav: true },
-  { id: "webs",        nav: "Webs",        ingredient: "Primer chorro",        glass: "left",   inNav: true },
-  { id: "arsenal",     nav: "Arsenal",     ingredient: "La mezcla",     glass: "center", inNav: true },
-  { id: "experiencia", nav: "Experiencia", ingredient: "Cuerpo",       glass: "right",  inNav: true },
-  { id: "formacion",   nav: "Formación",   ingredient: "Hasta arriba",    glass: "left",   inNav: true },
-  { id: "videos",      nav: "Vídeos",      ingredient: "Burbujas",      glass: "right",  inNav: true },
-  { id: "fotos",       nav: "Fotos",       ingredient: "Reposo",  glass: "left",   inNav: true },
+  { id: "sobre-mi",    nav: "Sobre mí",    ingredient: "Hielo",         glass: "left",   inNav: true },
+  { id: "proyectos",   nav: "Proyectos",   ingredient: "Cítrico",       glass: "right",  inNav: true },
+  { id: "ia",          nav: "IA",          ingredient: "Primer chorro", glass: "left",   inNav: true },
+  { id: "arsenal",     nav: "Habilidades", ingredient: "La mezcla",     glass: "center", inNav: true },
+  { id: "experiencia", nav: "Experiencia", ingredient: "Cuerpo",        glass: "right",  inNav: true },
+  { id: "formacion",   nav: "Formación",   ingredient: "Hasta arriba",  glass: "left",   inNav: true },
+  { id: "videos",      nav: "Vídeo",       ingredient: "Burbujas",      glass: "right",  inNav: true },
+  { id: "fotos",       nav: "Imagen",      ingredient: "Reposo",        glass: "left",   inNav: true },
   { id: "contacto",    nav: "Contacto",    ingredient: "Servida",       glass: "center", inNav: true },
 ];
 

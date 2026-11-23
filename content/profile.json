@@ -5,15 +5,15 @@
   "lastName": "Borbón",
   "age": 20,
   "location": "Zaragoza, España",
-  "role": "Creativo multidisciplinar",
-  "tagline": "Diseño, marketing, vídeo e inteligencia artificial, mezclados con intención.",
-  "intro": "Tengo 20 años, vivo en Zaragoza y llevo ideas desde el boceto hasta su ejecución: identidad visual, contenido para redes, vídeo, webs y procesos potenciados con IA.",
+  "role": "Marketing, diseño web e IA",
+  "tagline": "Transformo ideas en experiencias digitales, campañas visuales y proyectos que combinan creatividad, tecnología y estrategia.",
+  "intro": "Tengo 20 años, vivo en Zaragoza y llevo las ideas del boceto a la ejecución: identidad visual, contenido para redes, vídeo, webs y procesos potenciados con IA.",
   "availability": "Abierto a prácticas, colaboraciones y proyectos freelance",
   "about": {
     "lead": "Vengo del taller de impresión y del día a día de un negocio real. Por eso diseño pensando en cómo se produce, cómo se publica y cómo vende.",
     "paragraphs": [
-      "Me formé en Impresión Gráfica y ahora estudio el Grado Superior en Marketing y Publicidad. Entre medias he trabajado como operario en imprenta, he diseñado en Ara Printer y llevo la gestión y la comunicación de La Encantadora, en Zaragoza.",
-      "También creé La Encantadora FC, un proyecto propio en el que llevo la identidad visual, el Instagram y la comunicación del equipo. Ahí es donde pruebo, aprendo y aplico casi todo lo que sé."
+      "Me formé en Impresión Gráfica y ahora estudio el Grado Superior en Marketing y Publicidad. He hecho prácticas como operario de impresión en Gráficas Z y de diseño en Ara Printer, y desde 2024 llevo la gestión y la comunicación de La Encantadora, un local de Zaragoza.",
+      "También creé La Encantadora FC, un proyecto propio en el que llevo la identidad visual, el Instagram, los vídeos y la web del equipo. Ahí y en mis propuestas web, como la de Mori Sushi, es donde pruebo y aplico lo que sé: diseño, gestión de redes, producción audiovisual, desarrollo web e inteligencia artificial."
     ],
     "differentiators": [
       {
@@ -31,8 +31,8 @@
     ]
   },
   "portrait": {
-    "src": "/assets/photos/IMG_2368.jpg",
-    "alt": "Retrato de Darío Borbón con camiseta negra"
+    "src": "/assets/img/dario-borbon-retrato-columna.webp",
+    "alt": "Retrato de Darío Borbón con camiseta negra, apoyado en una columna"
   },
   "cv": {
     "src": "/assets/cv/Curriculum_Dario_Borbon.pdf",
@@ -44,9 +44,10 @@
   "showPhone": false,
   "socials": [
     {
-      "label": "Instagram · La Encantadora",
-      "handle": "@la_encantadora_casco",
-      "url": "https://www.instagram.com/la_encantadora_casco/"
+      "label": "LinkedIn",
+      "handle": "Darío Borbón",
+      "url": "https://www.linkedin.com/in/dario-borbon-1539a6292/",
+      "own": true
     },
     {
       "label": "Instagram · La Encantadora FC",
@@ -54,9 +55,11 @@
       "url": "https://www.instagram.com/laencantadorafc/"
     },
     {
-      "label": "LinkedIn",
-      "handle": "Darío Borbón",
-      "url": "https://www.linkedin.com/in/dario-borbon-1539a6292/"
+      "label": "Instagram · La Encantadora",
+      "handle": "@la_encantadora_casco",
+      "url": "https://www.instagram.com/la_encantadora_casco/"
     }
-  ]
+  ],
+  "headline": "Marketing, diseño y desarrollo digital con inteligencia artificial.",
+  "seoDescription": "Soy Darío Borbón, creativo digital en Zaragoza especializado en marketing, diseño web, producción audiovisual e inteligencia artificial. Descubre mis proyectos."
 }

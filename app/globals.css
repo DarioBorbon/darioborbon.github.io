@@ -12,7 +12,7 @@
   --line-strong: rgba(244, 239, 233, 0.18);
   --bone: #f4efe9;
   --muted: #b5aea7;
-  --dim: #7a746e;
+  --dim: #8c867f;
   --rose: #ff3d8b;
   --rose-soft: #ff8fb8;
   --rose-deep: #b0165a;
@@ -527,3 +527,72 @@ html:has(dialog[open]) .cursor-layer { opacity: 0; }
 .cursor-layer[data-state="media"] .cursor-dot { opacity: 0; }
 .cursor-layer[data-down="true"] .cursor-ring { width: 28px; height: 28px; border-color: var(--rose-soft); }
 .cursor-layer[data-down="true"][data-state="media"] .cursor-ring { width: 74px; height: 74px; }
+
+/* =========================================================
+   ADDITIONS — hero headline, links as chips, AI flows,
+   case-study pages, anchor landing.
+   ========================================================= */
+.hero-headline {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--bone);
+  max-width: 30ch;
+  text-wrap: balance;
+}
+
+.chip-link {
+  min-height: 2.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
+}
+.chip-link:hover { border-color: rgba(255, 61, 139, 0.4); color: var(--bone); }
+.chip-link:active { transform: scale(0.97); }
+
+/* AI workflows: steps joined by a thin rail */
+.flow { display: grid; gap: 0.75rem; counter-reset: step; }
+@media (min-width: 720px) {
+  .flow { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); grid-auto-flow: column; gap: 0; }
+}
+.flow-step {
+  position: relative;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.875rem;
+  background: rgba(255, 255, 255, 0.015);
+}
+@media (min-width: 720px) {
+  .flow-step { margin-right: 1.5rem; }
+  .flow-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1.5rem;
+    width: 1.5rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--line-strong), var(--rose));
+  }
+  .flow-step:last-child { margin-right: 0; }
+}
+
+/* project filter: hidden cards keep their markup (crawlable) */
+li.reveal[hidden] { display: none; }
+
+/* case-study pages: quiet ambient light instead of the footage */
+.case-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 85% 0%, rgba(176, 22, 90, 0.18), transparent 70%),
+    radial-gradient(50% 40% at 0% 100%, rgba(255, 61, 139, 0.07), transparent 70%),
+    var(--ink);
+}
+
+/* anchor jumps (nav, "salta la intro") land on the section heading,
+   not on the empty space left for the footage on mobile */
+@media (max-width: 899px) {
+  .beat[id]:not(#inicio) { scroll-margin-top: calc(-46vh + var(--nav-h) + 1rem); }
+}

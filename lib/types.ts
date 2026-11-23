@@ -5,7 +5,7 @@
  */
 
 export type Link = { label: string; url: string };
-export type Social = { label: string; handle: string; url: string; sample?: boolean };
+export type Social = { label: string; handle: string; url: string; sample?: boolean; /** own personal profile (used in Schema.org sameAs) */ own?: boolean };
 
 export type Profile = {
   name: string;
@@ -14,7 +14,9 @@ export type Profile = {
   age: number;
   location: string;
   role: string;
+  headline: string;
   tagline: string;
+  seoDescription: string;
   intro: string;
   availability: string;
   about: {
@@ -30,30 +32,38 @@ export type Profile = {
   socials: Social[];
 };
 
+export type ProjectTag = "web" | "grafico" | "audiovisual" | "ia";
+
 export type Project = {
-  id: string;
+  slug: string;
   title: string;
   category: string;
-  year: string;
-  description: string;
-  role: string;
+  tags: ProjectTag[];
+  /** optional; omitted when unknown */
+  year?: string;
+  summary: string;
+  need: string;
+  solution: string;
+  role: string[];
   tools: string[];
-  /** src empty → an art-directed placeholder is rendered instead. */
+  /** only results that can be checked (published, live, visible) */
+  outcome: string;
   cover: { src: string; alt: string; position?: string };
   link: Link | null;
-  sample?: boolean;
+  videos: string[];
+  featured: boolean;
 };
 
-export type Website = {
-  id: string;
-  name: string;
-  url: string;
-  description: string;
-  stack: string[];
-  role: string[];
-  outcome: string;
-  screenshot: string;
-  sample?: boolean;
+export type AI = {
+  statement: string;
+  areas: string[];
+  workflows: {
+    title: string;
+    context: string;
+    steps: { tool: string; does: string }[];
+    result: string;
+    links: { label: string; href: string }[];
+  }[];
 };
 
 export type Experience = {
@@ -85,6 +95,10 @@ export type Video = {
   title: string;
   category: string;
   description: string;
+  /** what I actually did on this piece */
+  role: string[];
+  /** slug of the related project */
+  project?: string;
   src: string;
   poster: string;
   orientation: "vertical" | "horizontal";

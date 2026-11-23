@@ -1,21 +1,25 @@
 [
   {
     "id": "encantadora-cumples",
-    "title": "Cumpleaños en La Encantadora",
-    "category": "Reel promocional",
-    "description": "Vídeo vertical para Instagram y TikTok: guion, grabación a cámara, montaje y subtítulos dinámicos para promocionar las celebraciones en el local.",
+    "title": "Reel de cumpleaños · La Encantadora",
+    "category": "Reel promocional vertical",
+    "description": "Vídeo vertical para Instagram y TikTok que promociona las celebraciones de cumpleaños en el local.",
+    "role": ["Guion", "Grabación a cámara", "Montaje", "Subtítulos dinámicos"],
+    "project": "la-encantadora",
     "src": "/assets/videos/encantadora-cumples.mp4",
-    "poster": "/assets/videos/encantadora-cumples.jpg",
+    "poster": "/assets/img/la-encantadora-reel-cumpleanos.webp",
     "orientation": "vertical",
     "duration": "0:27"
   },
   {
     "id": "pieza-restaurante",
-    "title": "Patrocinador · La Encantadora FC",
-    "category": "Vídeo promocional",
-    "description": "Pieza horizontal para presentar a la pizzería patrocinadora de La Encantadora FC: el equipo en el local, planos de grupo, ritmo de montaje y etalonaje cinematográfico.",
+    "title": "Presentación del patrocinador · La Encantadora FC",
+    "category": "Vídeo promocional horizontal",
+    "description": "Pieza para presentar a la pizzería que patrocina a La Encantadora FC, con el equipo en el propio local.",
+    "role": ["Grabación", "Planos de grupo", "Montaje y ritmo", "Etalonaje"],
+    "project": "la-encantadora-fc",
     "src": "/assets/videos/pieza-restaurante.mp4",
-    "poster": "/assets/videos/pieza-restaurante.jpg",
+    "poster": "/assets/img/la-encantadora-fc-video-patrocinador.webp",
     "orientation": "horizontal",
     "duration": "1:00"
   }

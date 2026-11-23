@@ -1,0 +1,54 @@
+{
+  "_comment": "Sección de inteligencia artificial. Cada flujo describe cómo combino herramientas en un proyecto real. Solo herramientas y usos verificados en los proyectos.",
+  "statement": "No uso la inteligencia artificial solo para generar contenido. La integro en mi forma de trabajar para diseñar, desarrollar, investigar y automatizar, y siempre con criterio propio sobre el resultado.",
+  "areas": [
+    "Desarrollo web",
+    "Diseño y creatividad",
+    "Edición y producción audiovisual",
+    "Generación de contenidos",
+    "Automatización",
+    "Investigación",
+    "Optimización de procesos",
+    "Prototipado digital"
+  ],
+  "workflows": [
+    {
+      "title": "De una idea a una web publicada",
+      "context": "Webs de La Encantadora FC, Mori Sushi y este portfolio",
+      "steps": [
+        { "tool": "Dirección de arte propia", "does": "Concepto, referencias, tipografía y paleta" },
+        { "tool": "Claude Code", "does": "Desarrollo del código, iteración y revisión" },
+        { "tool": "Netlify / GitHub Pages", "does": "Publicación y actualizaciones" }
+      ],
+      "result": "Tres webs en línea diseñadas por mí y desarrolladas con IA.",
+      "links": [
+        { "label": "La Encantadora FC", "href": "/proyectos/la-encantadora-fc/" },
+        { "label": "Mori Sushi", "href": "/proyectos/mori-sushi/" },
+        { "label": "Este portfolio", "href": "/proyectos/portfolio/" }
+      ]
+    },
+    {
+      "title": "Contenido para un negocio real",
+      "context": "Comunicación de La Encantadora",
+      "steps": [
+        { "tool": "ChatGPT", "does": "Ideas, textos, investigación y planificación" },
+        { "tool": "Photoshop y Canva", "does": "Carteles y publicaciones" },
+        { "tool": "Premiere Pro", "does": "Montaje de reels y vídeos" },
+        { "tool": "Instagram", "does": "Publicación y comunidad" }
+      ],
+      "result": "Campañas, eventos y promociones del local comunicados de forma constante.",
+      "links": [{ "label": "La Encantadora", "href": "/proyectos/la-encantadora/" }]
+    },
+    {
+      "title": "Vídeo con IA y herramientas conectadas",
+      "context": "Producción audiovisual y automatización",
+      "steps": [
+        { "tool": "Runway", "does": "Generación y edición de vídeo con IA, efectos visuales" },
+        { "tool": "Premiere Pro", "does": "Edición y acabado final" },
+        { "tool": "MCP", "does": "Conectar asistentes de IA con herramientas y aplicaciones" }
+      ],
+      "result": "Secuencias, efectos y tareas repetitivas resueltas en menos tiempo.",
+      "links": [{ "label": "Ver producción audiovisual", "href": "/#videos" }]
+    }
+  ]
+}

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "media": "node scripts/prepare-media.mjs"
+    "media": "node scripts/prepare-media.mjs",
+    "images": "node scripts/optimize-images.mjs",
+    "preview": "node scripts/serve-out.mjs"
   },
   "dependencies": {
     "next": "^15.5.29",

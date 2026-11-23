@@ -9,12 +9,13 @@ export function About() {
   const facts = [
     { k: "Edad", v: `${profile.age} años` },
     { k: "Ciudad", v: profile.location },
-    { k: "Ahora", v: "Grado Superior en Marketing y Publicidad" },
+    { k: "Estudio", v: "Grado Superior en Marketing y Publicidad" },
+    { k: "Hago", v: "Diseño, redes sociales, vídeo, webs e IA aplicada" },
     { k: "Disponible para", v: profile.availability },
   ];
   return (
     <Beat id="sobre-mi">
-      <BeatHeader id="sobre-mi" title={<>Quién <em>soy</em></>} lede={profile.about.lead} />
+      <BeatHeader id="sobre-mi" title={<>Sobre <em>mí</em></>} lede={profile.about.lead} />
 
       <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-10">
         <Reveal className="relative">
@@ -40,7 +41,7 @@ export function About() {
 
           <Reveal i={4} className="mt-8">
             <a href={profile.cv.src} download={profile.cv.fileName} className="btn btn-primary">
-              <Icon name="download" /> {profile.cv.label} <span className="mono text-[11px] text-ink/50">PDF</span>
+              <Icon name="download" /> {profile.cv.label} <span className="mono text-[11px] text-ink/70">PDF</span>
             </a>
           </Reveal>
         </div>

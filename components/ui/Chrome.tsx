@@ -168,7 +168,7 @@ function Settings() {
       <button
         type="button"
         className="btn btn-ghost h-9 w-9 justify-center px-0"
-        aria-label="Preferencias de experiencia"
+        aria-label="Preferencias: movimiento y animación"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
@@ -188,7 +188,7 @@ function Settings() {
         />
         <Toggle
           label="Animación de la copa"
-          hint={failed ? "Tu navegador no admite WebGL 2" : "Desactívala para navegar más ligero"}
+          hint={failed ? "No se ha podido cargar la animación" : "Desactívala para navegar más ligero"}
           checked={scene3d && !failed}
           onChange={(v) => setPrefs({ scene3d: v })}
           disabled={!open || failed}

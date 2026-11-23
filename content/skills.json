@@ -1,32 +1,8 @@
 {
   "_comment": "Mi arsenal creativo. status de cada herramienta: 'uso' = la utilizo en proyectos reales · 'aprendiendo' = en formación. Sin porcentajes ni certificaciones: solo lo que puedo demostrar. Revisa los 'aprendiendo' y ajústalos a tu realidad.",
-  "title": "Mi arsenal creativo",
-  "statement": "No utilizo la inteligencia artificial únicamente para generar contenido. La integro en mi forma de trabajar para diseñar, desarrollar, automatizar y convertir ideas en proyectos reales.",
+  "title": "Habilidades",
+  "statement": "Diseño, marketing, vídeo, web y gestión en la misma copa: lo que uso de verdad y lo que sigo aprendiendo, separado con honestidad.",
   "categories": [
-    {
-      "id": "ia",
-      "name": "Inteligencia artificial",
-      "short": "IA aplicada",
-      "featured": true,
-      "icon": "spark",
-      "description": "Integro la IA en todo el proceso: desde la idea y la investigación hasta el desarrollo, el vídeo y la automatización de tareas.",
-      "tools": [
-        { "name": "ChatGPT", "status": "uso", "note": "Ideas, análisis, contenidos, investigación y planificación" },
-        { "name": "Claude Code", "status": "uso", "note": "Desarrollo web y programación asistida por IA" },
-        { "name": "Runway", "status": "uso", "note": "Generación y edición de vídeo con IA, efectos visuales" },
-        { "name": "MCP", "status": "uso", "note": "Conectar herramientas y aplicaciones con asistentes de IA" }
-      ],
-      "abilities": [
-        "Prompt engineering para resultados creativos y técnicos",
-        "Automatización de procesos y flujos de trabajo",
-        "Integración de IA con herramientas creativas y desarrollo web",
-        "Recursos visuales, campañas, conceptos y prototipos"
-      ],
-      "examples": [
-        { "label": "Este portfolio, desarrollado con Claude Code", "href": "#webs" },
-        { "label": "Webs de La Encantadora FC y Mori Sushi", "href": "#webs" }
-      ]
-    },
     {
       "id": "video",
       "name": "Producción audiovisual",
@@ -35,8 +11,14 @@
       "icon": "play",
       "description": "Del guion al montaje final: grabo, edito y adapto cada pieza al formato y a la red donde va a vivir.",
       "tools": [
-        { "name": "Adobe Premiere Pro", "status": "uso" },
-        { "name": "Runway", "status": "uso" }
+        {
+          "name": "Adobe Premiere Pro",
+          "status": "uso"
+        },
+        {
+          "name": "Runway",
+          "status": "uso"
+        }
       ],
       "abilities": [
         "Grabación de vídeo",
@@ -48,8 +30,14 @@
         "Efectos, transiciones, música y grafismo"
       ],
       "examples": [
-        { "label": "Reel de cumpleaños · La Encantadora", "href": "#videos" },
-        { "label": "Vídeo del patrocinador · La Encantadora FC", "href": "#videos" }
+        {
+          "label": "Reel de cumpleaños · La Encantadora",
+          "href": "/#videos"
+        },
+        {
+          "label": "Vídeo del patrocinador · La Encantadora FC",
+          "href": "/#videos"
+        }
       ]
     },
     {
@@ -60,10 +48,22 @@
       "icon": "pen",
       "description": "Identidades, carteles y piezas para redes con base técnica de imprenta: sé cómo se ve en pantalla y cómo sale en papel.",
       "tools": [
-        { "name": "Photoshop", "status": "uso" },
-        { "name": "Illustrator", "status": "uso" },
-        { "name": "Adobe Creative Cloud", "status": "uso" },
-        { "name": "Canva", "status": "uso" }
+        {
+          "name": "Photoshop",
+          "status": "uso"
+        },
+        {
+          "name": "Illustrator",
+          "status": "uso"
+        },
+        {
+          "name": "Adobe Creative Cloud",
+          "status": "uso"
+        },
+        {
+          "name": "Canva",
+          "status": "uso"
+        }
       ],
       "abilities": [
         "Carteles publicitarios",
@@ -73,8 +73,14 @@
         "Preparación de archivos para impresión y producción gráfica"
       ],
       "examples": [
-        { "label": "Identidad de La Encantadora FC", "href": "#proyectos" },
-        { "label": "Piezas para La Encantadora", "href": "#proyectos" }
+        {
+          "label": "Identidad de La Encantadora FC",
+          "href": "/proyectos/la-encantadora-fc/"
+        },
+        {
+          "label": "Piezas para La Encantadora",
+          "href": "/proyectos/la-encantadora/"
+        }
       ]
     },
     {
@@ -85,13 +91,34 @@
       "icon": "window",
       "description": "Diseño webs para negocios y las desarrollo apoyándome en IA. Herramientas que uso a diario y tecnologías que sigo aprendiendo, separadas con honestidad.",
       "tools": [
-        { "name": "Claude Code", "status": "uso" },
-        { "name": "WordPress", "status": "uso" },
-        { "name": "Elementor", "status": "uso" },
-        { "name": "Netlify", "status": "uso" },
-        { "name": "HTML y CSS", "status": "aprendiendo" },
-        { "name": "JavaScript", "status": "aprendiendo" },
-        { "name": "Next.js y three.js", "status": "aprendiendo" }
+        {
+          "name": "Claude Code",
+          "status": "uso"
+        },
+        {
+          "name": "WordPress",
+          "status": "uso"
+        },
+        {
+          "name": "Elementor",
+          "status": "uso"
+        },
+        {
+          "name": "Netlify",
+          "status": "uso"
+        },
+        {
+          "name": "HTML y CSS",
+          "status": "aprendiendo"
+        },
+        {
+          "name": "JavaScript",
+          "status": "aprendiendo"
+        },
+        {
+          "name": "Next.js y three.js",
+          "status": "aprendiendo"
+        }
       ],
       "abilities": [
         "Webs para negocios",
@@ -101,8 +128,14 @@
         "Animaciones e interacciones web"
       ],
       "examples": [
-        { "label": "La Encantadora FC", "href": "https://laencantadorafc.netlify.app" },
-        { "label": "Mori Sushi", "href": "https://morisushi.netlify.app" }
+        {
+          "label": "La Encantadora FC",
+          "href": "/proyectos/la-encantadora-fc/"
+        },
+        {
+          "label": "Mori Sushi",
+          "href": "/proyectos/mori-sushi/"
+        }
       ]
     },
     {
@@ -113,9 +146,18 @@
       "icon": "pulse",
       "description": "Marketing aplicado a negocios reales: estrategia de contenidos, campañas y comunicación de marca con resultados que se ven en el local.",
       "tools": [
-        { "name": "Instagram", "status": "uso" },
-        { "name": "TikTok", "status": "uso" },
-        { "name": "Canva", "status": "uso" }
+        {
+          "name": "Instagram",
+          "status": "uso"
+        },
+        {
+          "name": "TikTok",
+          "status": "uso"
+        },
+        {
+          "name": "Canva",
+          "status": "uso"
+        }
       ],
       "abilities": [
         "Marketing digital",
@@ -126,8 +168,14 @@
         "Contenido para La Encantadora y La Encantadora FC"
       ],
       "examples": [
-        { "label": "@la_encantadora_casco", "href": "https://www.instagram.com/la_encantadora_casco/" },
-        { "label": "@laencantadorafc", "href": "https://www.instagram.com/laencantadorafc/" }
+        {
+          "label": "@la_encantadora_casco",
+          "href": "https://www.instagram.com/la_encantadora_casco/"
+        },
+        {
+          "label": "@laencantadorafc",
+          "href": "https://www.instagram.com/laencantadorafc/"
+        }
       ]
     },
     {
@@ -147,7 +195,10 @@
         "Gestión y coordinación de proyectos creativos"
       ],
       "examples": [
-        { "label": "La Encantadora · Zaragoza", "href": "#experiencia" }
+        {
+          "label": "La Encantadora · Zaragoza",
+          "href": "/#experiencia"
+        }
       ]
     }
   ]

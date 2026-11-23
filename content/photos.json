@@ -1,16 +1,16 @@
 [
   {
     "id": "retrato-otono",
-    "src": "/assets/photos/IMG_0076.jpg",
-    "alt": "Darío sonriendo con sudadera verde y capucha, árboles amarillos de otoño al fondo",
-    "caption": "Otoño",
+    "src": "/assets/img/dario-borbon-retrato-otono.webp",
+    "alt": "Darío Borbón sonriendo con sudadera verde y capucha, con árboles amarillos de otoño al fondo",
+    "caption": "Retrato de otoño",
     "credit": "",
     "aspect": "4/5"
   },
   {
     "id": "retrato-columna",
-    "src": "/assets/photos/IMG_2368.jpg",
-    "alt": "Darío apoyado en una columna, camiseta negra, luz natural",
+    "src": "/assets/img/dario-borbon-retrato-columna.webp",
+    "alt": "Darío Borbón apoyado en una columna con camiseta negra y luz natural",
     "caption": "Retrato editorial",
     "credit": "",
     "aspect": "2/3"

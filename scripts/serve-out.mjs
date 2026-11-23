@@ -1,0 +1,16 @@
+// Minimal static server to preview the static export in out/ (like GitHub Pages). npm run preview
+import http from "node:http";
+import fs from "node:fs";
+import path from "node:path";
+
+const root = path.resolve("out");
+const types = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml", ".webp": "image/webp", ".jpg": "image/jpeg", ".png": "image/png", ".mp4": "video/mp4", ".pdf": "application/pdf", ".json": "application/json", ".txt": "text/plain", ".woff2": "font/woff2" };
+
+http.createServer((req, res) => {
+  let p = path.join(root, decodeURIComponent(req.url.split("?")[0]));
+  if (!p.startsWith(root)) { res.writeHead(403); return res.end(); }
+  if (fs.existsSync(p) && fs.statSync(p).isDirectory()) p = path.join(p, "index.html");
+  if (!fs.existsSync(p)) { res.writeHead(404); return res.end("404"); }
+  res.writeHead(200, { "Content-Type": types[path.extname(p)] || "application/octet-stream" });
+  fs.createReadStream(p).pipe(res);
+}).listen(4000);

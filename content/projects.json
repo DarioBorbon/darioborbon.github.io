@@ -1,89 +1,158 @@
 [
   {
-    "id": "la-encantadora",
-    "title": "La Encantadora",
-    "category": "Negocio propio · Marca y redes",
-    "year": "2024 — hoy",
-    "description": "Gestión del local en Zaragoza: comunicación de marca, piezas gráficas para eventos y promociones, contenido para Instagram y vídeos promocionales como la campaña de cumpleaños.",
-    "role": "Gestión, dirección creativa y redes sociales",
-    "tools": [
-      "Photoshop",
-      "Canva",
-      "Premiere Pro",
-      "Instagram",
-      "ChatGPT"
-    ],
-    "cover": {
-      "src": "/assets/videos/encantadora-cumples.jpg",
-      "alt": "Fotograma del vídeo promocional de cumpleaños de La Encantadora",
-      "position": "50% 30%"
-    },
-    "link": {
-      "label": "Ver en Instagram",
-      "url": "https://www.instagram.com/la_encantadora_casco/"
-    }
-  },
-  {
-    "id": "la-encantadora-fc",
+    "slug": "la-encantadora-fc",
     "title": "La Encantadora FC",
-    "category": "Proyecto propio · Identidad visual",
-    "year": "Proyecto propio",
-    "description": "Creé el equipo y su universo visual: identidad, carteles de partidos y resultados, planificación de contenido en Instagram y la web oficial.",
-    "role": "Fundador, identidad visual y community management",
+    "category": "Proyecto propio · Identidad y web",
+    "tags": [
+      "web",
+      "grafico",
+      "audiovisual",
+      "ia"
+    ],
+    "year": "",
+    "summary": "Creé el equipo y todo su universo visual: identidad, carteles de partidos, Instagram y la web oficial.",
+    "need": "Un equipo nuevo necesitaba una identidad propia, un canal para contar sus partidos y resultados y una web donde mostrar equipaciones, tienda y plantilla.",
+    "solution": "Diseñé la identidad visual rosa y negra del club, la apliqué a carteles de partidos, resultados y publicaciones, y desarrollé la web oficial con ayuda de Claude Code: escaparate de equipaciones, tienda y plantilla.",
+    "role": [
+      "Fundador del proyecto",
+      "Identidad visual y diseño de carteles",
+      "Planificación y gestión de Instagram",
+      "Diseño y desarrollo web asistido por IA, publicación en Netlify",
+      "Vídeo de presentación del patrocinador"
+    ],
     "tools": [
       "Illustrator",
       "Photoshop",
       "Canva",
       "Claude Code",
+      "HTML, CSS y JavaScript",
       "Netlify"
     ],
+    "outcome": "Web oficial publicada y en línea, e Instagram activo del equipo (@laencantadorafc).",
     "cover": {
-      "src": "/assets/websites/laencantadorafc.jpg",
-      "alt": "Captura de la web de La Encantadora FC"
+      "src": "/assets/img/la-encantadora-fc-web.webp",
+      "alt": "Portada de la web oficial de La Encantadora FC con la identidad rosa y negra del club",
+      "position": "50% 0%"
     },
     "link": {
-      "label": "Ver la web",
+      "label": "Visitar la web de La Encantadora FC",
       "url": "https://laencantadorafc.netlify.app"
-    }
+    },
+    "videos": [
+      "pieza-restaurante"
+    ],
+    "featured": true
   },
   {
-    "id": "mori-sushi",
+    "slug": "la-encantadora",
+    "title": "La Encantadora",
+    "category": "Marca, contenido y gestión",
+    "tags": [
+      "grafico",
+      "audiovisual",
+      "ia"
+    ],
+    "year": "2024 — actualidad",
+    "summary": "Comunicación de marca, piezas gráficas y vídeo para un local de Zaragoza que gestiono en el día a día.",
+    "need": "Un local de hostelería en Zaragoza necesitaba comunicar sus eventos, promociones y celebraciones de forma constante, con una imagen reconocible y sin depender de una agencia.",
+    "solution": "Me encargo de la comunicación del local de principio a fin: planifico campañas y eventos, diseño las piezas gráficas, grabo y monto los vídeos promocionales y publico el contenido en Instagram.",
+    "role": [
+      "Gestión del local y organización de campañas, eventos y promociones",
+      "Diseño de piezas gráficas y publicaciones",
+      "Guion, grabación y montaje de vídeos promocionales",
+      "Gestión de Instagram y atención al cliente"
+    ],
+    "tools": [
+      "Photoshop",
+      "Canva",
+      "Premiere Pro",
+      "ChatGPT",
+      "Instagram"
+    ],
+    "outcome": "Comunicación activa y continuada del local en Instagram (@la_encantadora_casco), con piezas como el reel de cumpleaños que puedes ver en la sección de vídeo.",
+    "cover": {
+      "src": "/assets/img/la-encantadora-reel-cumpleanos.webp",
+      "alt": "Fotograma del reel promocional de cumpleaños grabado en La Encantadora",
+      "position": "50% 30%"
+    },
+    "link": {
+      "label": "Ver Instagram de La Encantadora",
+      "url": "https://www.instagram.com/la_encantadora_casco/"
+    },
+    "videos": [
+      "encantadora-cumples"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "mori-sushi",
     "title": "Mori Sushi",
-    "category": "Diseño web · Encargo de cliente",
-    "year": "Web",
-    "description": "Web encargada por un restaurante japonés de buffet libre en Zaragoza: intro animada, estética de lujo en negro y dorado, carta y reservas desde la portada. El cliente no llegó a usarla, pero la propuesta está completa y publicada.",
-    "role": "Diseño y desarrollo web asistido por IA",
+    "category": "Propuesta de diseño web",
+    "tags": [
+      "web",
+      "ia"
+    ],
+    "year": "",
+    "summary": "Propuesta de web para un restaurante japonés de buffet libre en Zaragoza: estética de mármol negro y luz cálida, intro animada y reserva desde la portada.",
+    "need": "Un restaurante japonés de buffet libre en Zaragoza con una presencia online mejorable. Planteé cómo podría ser su web: transmitir una experiencia cuidada, enseñar la carta y facilitar la reserva desde el primer momento.",
+    "solution": "Diseñé y desarrollé una propuesta completa: intro animada, dirección de arte en negro y dorado, carta, galería y un acceso a la reserva de mesa en la propia portada, todo adaptado a móvil.",
+    "role": [
+      "Dirección de arte y diseño visual",
+      "Diseño de la experiencia y de la intro animada",
+      "Desarrollo frontend asistido por IA",
+      "Maquetación responsive y despliegue en Netlify"
+    ],
     "tools": [
       "Claude Code",
-      "HTML/CSS",
+      "Astro",
       "Netlify"
     ],
+    "outcome": "La propuesta está terminada y se puede visitar como demo pública. No es la web oficial del restaurante: algunas funciones, como la reserva, son experimentales y parte del contenido está pendiente de confirmar con el negocio.",
     "cover": {
-      "src": "/assets/websites/morisushi.jpg",
-      "alt": "Captura de la web de Mori Sushi"
+      "src": "/assets/img/mori-sushi-propuesta-web.webp",
+      "alt": "Portada de la propuesta web de Mori Sushi en negro y dorado",
+      "position": "50% 0%"
     },
     "link": {
-      "label": "Ver la web",
+      "label": "Ver la demo de Mori Sushi",
       "url": "https://morisushi.netlify.app"
-    }
+    },
+    "videos": [],
+    "featured": true
   },
   {
-    "id": "portfolio-copa",
+    "slug": "portfolio",
     "title": "Este portfolio",
-    "category": "Experiencia interactiva 3D",
+    "category": "Experiencia web interactiva",
+    "tags": [
+      "web",
+      "ia"
+    ],
     "year": "2026",
-    "description": "Una copa que se construye ingrediente a ingrediente mientras haces scroll. Next.js, three.js y shaders propios, desarrollado con Claude Code.",
-    "role": "Concepto, dirección de arte y desarrollo con IA",
+    "summary": "Una copa que se prepara ingrediente a ingrediente mientras haces scroll: cada ingrediente es una parte de mi perfil.",
+    "need": "Quería un portfolio que se recordara y que demostrara en sí mismo lo que sé hacer: dirección de arte, narrativa, desarrollo web e IA.",
+    "solution": "Una narrativa en scroll: un plano real de una copa preparándose, convertido en secuencia de fotogramas y sincronizado con el desplazamiento, con burbujas animadas en tiempo real. El contenido está en HTML accesible y se puede leer sin la animación.",
+    "role": [
+      "Concepto y narrativa",
+      "Dirección de arte",
+      "Desarrollo con Next.js asistido por Claude Code",
+      "SEO técnico, rendimiento y publicación en GitHub Pages"
+    ],
     "tools": [
       "Claude Code",
       "Next.js",
-      "three.js",
-      "Tailwind"
+      "TypeScript",
+      "Tailwind CSS",
+      "GitHub Pages"
     ],
+    "outcome": "Publicado en darioborbon.github.io. Es la web que estás viendo.",
     "cover": {
-      "src": "",
-      "alt": "Copa de cóctel renderizada en 3D"
+      "src": "/assets/img/portfolio-dario-borbon-web.webp",
+      "alt": "Portada del portfolio de Darío Borbón con la copa sobre fondo negro",
+      "position": "50% 50%"
     },
-    "link": null
+    "link": null,
+    "videos": [],
+    "featured": false
   }
 ]

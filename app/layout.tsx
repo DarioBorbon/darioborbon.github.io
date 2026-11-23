@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   formatDetection: { telephone: false },
+  // Google Search Console ownership (keep while the property is verified)
+  verification: { google: "M2TKi9GXyz3tIYL4KtbcBFbERjQZ5TQOZhTunSA9sd4" },
 };
 
 export const viewport: Viewport = {

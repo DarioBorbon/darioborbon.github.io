@@ -13,6 +13,7 @@ import { Icon } from "./Icon";
  */
 export function Chrome() {
   const active = usePrefs((s) => s.active);
+  const skillSide = usePrefs((s) => s.skillSide);
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
 
@@ -25,9 +26,12 @@ export function Chrome() {
   }, []);
 
   // mirror the active beat's glass side → scrims move to the text side
+  // (in the skills section the selected category decides the side)
   useEffect(() => {
-    document.documentElement.dataset.glass = STORY[active]?.glass ?? "right";
-  }, [active]);
+    const beat = STORY[active];
+    document.documentElement.dataset.beat = beat?.id ?? "";
+    document.documentElement.dataset.glass = beat?.id === "arsenal" ? skillSide : beat?.glass ?? "right";
+  }, [active, skillSide]);
 
   // lock scroll & close on Escape while the mobile menu is open
   useEffect(() => {

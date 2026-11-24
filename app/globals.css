@@ -596,3 +596,39 @@ li.reveal[hidden] { display: none; }
 @media (max-width: 899px) {
   .beat[id]:not(#inicio) { scroll-margin-top: calc(-46vh + var(--nav-h) + 1rem); }
 }
+
+/* =========================================================
+   SKILLS LIGHTING — the glass takes the selected category's
+   accent. --skill-w (0…1) is how much the skills section owns
+   the scene; the colour itself transitions (registered prop).
+   ========================================================= */
+@property --skill-accent { syntax: "<color>"; inherits: true; initial-value: #a78bfa; }
+:root { --skill-w: 0; transition: --skill-accent 0.8s var(--ease-out); }
+.scene-layer { perspective: 1600px; }
+.footage-panel { transform-style: preserve-3d; will-change: transform; }
+.footage-canvas { transform-origin: 50% 85%; }
+.footage-tint {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 40vw;
+  height: 86vh;
+  margin: -43vh 0 0 -20vw;
+  pointer-events: none;
+  transform-origin: 50% 85%;
+  background: radial-gradient(closest-side, var(--skill-accent), transparent 78%);
+  mix-blend-mode: overlay;
+  opacity: calc(var(--skill-w) * 0.85);
+}
+.footage-glow::after {
+  content: "";
+  position: absolute;
+  inset: -6%;
+  border-radius: inherit;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--skill-accent) 34%, transparent), transparent 100%);
+  opacity: var(--skill-w);
+}
+@media (max-width: 899px) {
+  .footage-tint { width: 90vw; height: 60vh; margin: -30vh 0 0 -45vw; }
+}
+html[data-motion="reduced"] :root, html[data-motion="reduced"] { transition: none; }

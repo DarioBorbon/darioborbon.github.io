@@ -119,14 +119,15 @@ export type Photo = {
 
 export type SkillTool = { name: string; status: "uso" | "aprendiendo"; note?: string };
 export type SkillCategory = {
-  id: string;
-  name: string;
+  id: "ia" | "video" | "diseno" | "web" | "marketing" | "gestion";
   short: string;
-  featured: boolean;
-  icon: "spark" | "play" | "pen" | "window" | "pulse" | "grid";
-  description: string;
+  name: string;
+  /** accent colour of this category's interface and of the glass light */
+  accent: string;
+  /** side of the screen the glass takes on desktop */
+  side: "left" | "right";
+  intro: string;
   tools: SkillTool[];
   abilities: string[];
-  examples: { label: string; href: string }[];
 };
 export type Skills = { title: string; statement: string; categories: SkillCategory[] };

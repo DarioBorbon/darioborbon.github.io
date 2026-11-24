@@ -5,7 +5,7 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
 import { AISection } from "@/components/sections/AI";
-import { Arsenal } from "@/components/sections/Arsenal";
+import { SkillsSection } from "@/components/skills/SkillsSection";
 import { ExperienceSection } from "@/components/sections/Experience";
 import { EducationSection } from "@/components/sections/Education";
 import { Videos } from "@/components/sections/Videos";
@@ -30,7 +30,7 @@ export default function Page() {
         <About />
         <Projects />
         <AISection />
-        <Arsenal />
+        <SkillsSection />
         <ExperienceSection />
         <EducationSection />
         <Videos />

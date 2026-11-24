@@ -1,204 +1,141 @@
 {
-  "_comment": "Mi arsenal creativo. status de cada herramienta: 'uso' = la utilizo en proyectos reales · 'aprendiendo' = en formación. Sin porcentajes ni certificaciones: solo lo que puedo demostrar. Revisa los 'aprendiendo' y ajústalos a tu realidad.",
+  "_comment": "Habilidades. Seis categorías, cada una con su propia interfaz (components/skills/*). 'side' = lado de la copa en escritorio. Herramientas: status 'uso' = la uso en proyectos reales · 'aprendiendo' = en formación. Sin porcentajes ni métricas inventadas.",
   "title": "Habilidades",
-  "statement": "Diseño, marketing, vídeo, web y gestión en la misma copa: lo que uso de verdad y lo que sigo aprendiendo, separado con honestidad.",
+  "statement": "Seis disciplinas, una misma copa. Elige una para ver cómo trabajo en ella, con qué herramientas y en qué proyectos reales la he aplicado.",
   "categories": [
     {
-      "id": "video",
-      "name": "Producción audiovisual",
-      "short": "Vídeo",
-      "featured": false,
-      "icon": "play",
-      "description": "Del guion al montaje final: grabo, edito y adapto cada pieza al formato y a la red donde va a vivir.",
+      "id": "ia",
+      "short": "IA",
+      "name": "Inteligencia artificial",
+      "accent": "#a78bfa",
+      "side": "left",
+      "intro": "La IA está en todo mi proceso: idea, investigación, desarrollo, vídeo y automatización. Yo decido el criterio; las herramientas aceleran la ejecución.",
       "tools": [
-        {
-          "name": "Adobe Premiere Pro",
-          "status": "uso"
-        },
-        {
-          "name": "Runway",
-          "status": "uso"
-        }
+        { "name": "ChatGPT", "status": "uso", "note": "Ideas, textos, investigación y planificación" },
+        { "name": "Claude Code", "status": "uso", "note": "Desarrollo web y programación asistida" },
+        { "name": "Runway", "status": "uso", "note": "Generación y edición de vídeo, efectos" },
+        { "name": "MCP", "status": "uso", "note": "Conectar asistentes de IA con aplicaciones" },
+        { "name": "Automatización", "status": "uso", "note": "Flujos que ahorran tareas repetitivas" },
+        { "name": "Prompt engineering", "status": "uso", "note": "Instrucciones precisas para resultados creativos y técnicos" }
+      ],
+      "abilities": [
+        "Generación de contenido visual",
+        "Desarrollo web asistido por IA",
+        "Automatización de flujos de trabajo",
+        "Integración de aplicaciones mediante MCP",
+        "Creación de vídeos y campañas con IA"
+      ]
+    },
+    {
+      "id": "video",
+      "short": "Vídeo",
+      "name": "Vídeo y edición audiovisual",
+      "accent": "#ef4444",
+      "side": "right",
+      "intro": "Del guion al export: grabo, monto y adapto cada pieza al formato y a la red donde va a vivir.",
+      "tools": [
+        { "name": "Adobe Premiere Pro", "status": "uso", "note": "Montaje, color, subtítulos y export" },
+        { "name": "Runway", "status": "uso", "note": "Secuencias y efectos con IA" }
       ],
       "abilities": [
         "Grabación de vídeo",
-        "Edición y montaje audiovisual",
-        "Reels para Instagram y TikTok",
-        "Vídeos publicitarios y promocionales",
-        "Conceptos y guiones audiovisuales",
-        "Secuencias generadas con IA",
-        "Efectos, transiciones, música y grafismo"
-      ],
-      "examples": [
-        {
-          "label": "Reel de cumpleaños · La Encantadora",
-          "href": "/#videos"
-        },
-        {
-          "label": "Vídeo del patrocinador · La Encantadora FC",
-          "href": "/#videos"
-        }
+        "Guion y planificación",
+        "Montaje audiovisual",
+        "Edición de reels",
+        "Sincronización musical",
+        "Subtítulos dinámicos",
+        "Vídeos promocionales"
       ]
     },
     {
       "id": "diseno",
-      "name": "Diseño gráfico e identidad",
       "short": "Diseño",
-      "featured": false,
-      "icon": "pen",
-      "description": "Identidades, carteles y piezas para redes con base técnica de imprenta: sé cómo se ve en pantalla y cómo sale en papel.",
+      "name": "Diseño gráfico",
+      "accent": "#ff7a45",
+      "side": "left",
+      "intro": "Identidad, composición y tipografía con base técnica de imprenta: sé cómo se ve en pantalla y cómo sale en papel.",
       "tools": [
-        {
-          "name": "Photoshop",
-          "status": "uso"
-        },
-        {
-          "name": "Illustrator",
-          "status": "uso"
-        },
-        {
-          "name": "Adobe Creative Cloud",
-          "status": "uso"
-        },
-        {
-          "name": "Canva",
-          "status": "uso"
-        }
+        { "name": "Adobe Photoshop", "status": "uso" },
+        { "name": "Adobe Illustrator", "status": "uso" },
+        { "name": "Canva", "status": "uso" }
       ],
       "abilities": [
-        "Carteles publicitarios",
-        "Identidad visual, branding y logotipos",
-        "Publicaciones para redes sociales",
-        "Composición fotográfica, retoque y tratamiento de imagen",
-        "Preparación de archivos para impresión y producción gráfica"
-      ],
-      "examples": [
-        {
-          "label": "Identidad de La Encantadora FC",
-          "href": "/proyectos/la-encantadora-fc/"
-        },
-        {
-          "label": "Piezas para La Encantadora",
-          "href": "/proyectos/la-encantadora/"
-        }
+        "Dirección artística",
+        "Diseño de identidad visual",
+        "Composición y tipografía",
+        "Diseño publicitario",
+        "Preparación de archivos para impresión",
+        "Creación de contenido gráfico"
       ]
     },
     {
       "id": "web",
-      "name": "Diseño y desarrollo web",
       "short": "Web",
-      "featured": false,
-      "icon": "window",
-      "description": "Diseño webs para negocios y las desarrollo apoyándome en IA. Herramientas que uso a diario y tecnologías que sigo aprendiendo, separadas con honestidad.",
+      "name": "Diseño y desarrollo web",
+      "accent": "#60a5fa",
+      "side": "right",
+      "intro": "Diseño la experiencia y la desarrollo con IA. Separo con honestidad lo que hago con asistencia de lo que aún estoy aprendiendo a programar a mano.",
       "tools": [
-        {
-          "name": "Claude Code",
-          "status": "uso"
-        },
-        {
-          "name": "WordPress",
-          "status": "uso"
-        },
-        {
-          "name": "Elementor",
-          "status": "uso"
-        },
-        {
-          "name": "Netlify",
-          "status": "uso"
-        },
-        {
-          "name": "HTML y CSS",
-          "status": "aprendiendo"
-        },
-        {
-          "name": "JavaScript",
-          "status": "aprendiendo"
-        },
-        {
-          "name": "Next.js y three.js",
-          "status": "aprendiendo"
-        }
+        { "name": "Claude Code", "status": "uso", "note": "Desarrollo asistido por IA" },
+        { "name": "GitHub", "status": "uso", "note": "Control de versiones y GitHub Pages" },
+        { "name": "Netlify", "status": "uso", "note": "Publicación" },
+        { "name": "HTML", "status": "aprendiendo" },
+        { "name": "CSS", "status": "aprendiendo" },
+        { "name": "JavaScript", "status": "aprendiendo" },
+        { "name": "Next.js", "status": "aprendiendo" },
+        { "name": "Three.js", "status": "aprendiendo" }
       ],
       "abilities": [
-        "Webs para negocios",
-        "Diseño de interfaces y prototipado",
+        "Diseño de interfaces",
+        "Desarrollo web asistido por IA",
         "Diseño responsive",
-        "Desarrollo asistido por IA",
-        "Animaciones e interacciones web"
-      ],
-      "examples": [
-        {
-          "label": "La Encantadora FC",
-          "href": "/proyectos/la-encantadora-fc/"
-        },
-        {
-          "label": "Mori Sushi",
-          "href": "/proyectos/mori-sushi/"
-        }
+        "Experiencias web interactivas",
+        "Animación y escenas 3D",
+        "Publicación de webs",
+        "Dirección creativa digital"
       ]
     },
     {
       "id": "marketing",
-      "name": "Marketing, publicidad y redes",
       "short": "Marketing",
-      "featured": false,
-      "icon": "pulse",
-      "description": "Marketing aplicado a negocios reales: estrategia de contenidos, campañas y comunicación de marca con resultados que se ven en el local.",
+      "name": "Marketing y publicidad",
+      "accent": "#34d399",
+      "side": "left",
+      "intro": "No solo diseño piezas: planifico qué se publica, para quién y con qué objetivo, en negocios reales.",
       "tools": [
-        {
-          "name": "Instagram",
-          "status": "uso"
-        },
-        {
-          "name": "TikTok",
-          "status": "uso"
-        },
-        {
-          "name": "Canva",
-          "status": "uso"
-        }
+        { "name": "Instagram", "status": "uso" },
+        { "name": "TikTok", "status": "uso" },
+        { "name": "Canva", "status": "uso" },
+        { "name": "ChatGPT", "status": "uso", "note": "Investigación y planificación" }
       ],
       "abilities": [
-        "Marketing digital",
-        "Gestión de Instagram y redes sociales",
-        "Campañas publicitarias y promociones",
+        "Planificación de campañas",
         "Estrategia de contenidos",
-        "Branding y comunicación de marca",
-        "Contenido para La Encantadora y La Encantadora FC"
-      ],
-      "examples": [
-        {
-          "label": "@la_encantadora_casco",
-          "href": "https://www.instagram.com/la_encantadora_casco/"
-        },
-        {
-          "label": "@laencantadorafc",
-          "href": "https://www.instagram.com/laencantadorafc/"
-        }
+        "Gestión de redes sociales",
+        "Comunicación de marca",
+        "Investigación de mercados",
+        "Segmentación de públicos",
+        "Publicidad digital",
+        "Promoción de eventos"
       ]
     },
     {
       "id": "gestion",
-      "name": "Gestión empresarial y proyectos",
       "short": "Gestión",
-      "featured": false,
-      "icon": "grid",
-      "description": "Experiencia directa en la gestión de La Encantadora: decisiones de negocio, campañas, eventos y trato con clientes cada semana.",
+      "name": "Gestión y emprendimiento",
+      "accent": "#d6a756",
+      "side": "right",
+      "intro": "Llevo un negocio real y he creado un proyecto propio desde cero. Decido, organizo y respondo por el resultado.",
       "tools": [],
       "abilities": [
-        "Gestión de negocio",
-        "Organización de campañas y eventos",
-        "Desarrollo de identidad de marca",
-        "Planificación comercial",
-        "Comunicación con clientes",
-        "Gestión y coordinación de proyectos creativos"
-      ],
-      "examples": [
-        {
-          "label": "La Encantadora · Zaragoza",
-          "href": "/#experiencia"
-        }
+        "Gestión de La Encantadora",
+        "Creación de La Encantadora FC",
+        "Organización de eventos",
+        "Gestión de equipos",
+        "Comunicación comercial",
+        "Proveedores y patrocinadores",
+        "Toma de decisiones",
+        "Planificación de proyectos"
       ]
     }
   ]

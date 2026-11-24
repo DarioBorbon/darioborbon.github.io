@@ -15,10 +15,13 @@ export type State = {
   /** scene could not start (no WebGL, error) */
   failed: boolean;
   active: number;
+  /** Skills section: side the glass takes for the selected category, and its accent colour */
+  skillSide: "left" | "right";
+  skillAccent: string;
 };
 
 const KEY = "db-portfolio-prefs";
-let state: State = { motion: "full", scene3d: true, ready: false, failed: false, active: 0 };
+let state: State = { motion: "full", scene3d: true, ready: false, failed: false, active: 0, skillSide: "left", skillAccent: "#a78bfa" };
 const listeners = new Set<() => void>();
 
 function emit() {

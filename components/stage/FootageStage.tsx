@@ -18,6 +18,7 @@ import { asset } from "@/lib/asset";
  * the section enters the screen and then holds while you read.
  */
 const TOTAL = 234;
+const ARSENAL = STORY.findIndex((b) => b.id === "arsenal");
 const src = (n: number) => asset(`/assets/stage/seq/f${String(n).padStart(3, "0")}.webp`);
 
 /** last frame reached by each beat (order = lib/story.ts) */
@@ -44,6 +45,7 @@ const sideX = (i: number) => {
 export default function FootageStage() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const tintRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -205,6 +207,9 @@ export default function FootageStage() {
     let raf = 0;
     let lastActive = -1;
     let running = true;
+    // glass position (vw), velocity (vw/s) and liquid lean (−1…1) for the skills spring
+    let gx = 0, gv = 0, gk = 0;
+    let lastSkew = "", lastW = "", lastAccent = "";
 
     const tick = () => {
       if (!running) return;
@@ -258,16 +263,66 @@ export default function FootageStage() {
         }
       }
 
-      // glide to the side opposite the text
+      /* ---- WHO MOVES THE GLASS ----
+       * Outside the skills section the story (scroll) decides where the glass
+       * sits. Inside it, the selected skill category decides (prefs.skillSide).
+       * w ∈ [0,1] cross-fades the two targets as you scroll in/out, so the two
+       * systems never fight. Inside, a spring adds weight and inertia: the
+       * glass tilts with its velocity and the liquid leans with acceleration. */
       const panel = panelRef.current;
       if (panel) {
-        if (window.innerWidth < 900) panel.style.transform = "none";
-        else {
+        const mobile = window.innerWidth < 900;
+        const ramp = (x: number) => { const c = Math.min(1, Math.max(0, x)); return c * c * (3 - 2 * c); };
+        // ownership follows the section's edges on screen: the selector takes
+        // over as the section's top rises past 80→40 % of the viewport and
+        // hands back as its bottom leaves 65→30 % — never while its content
+        // still fills the screen, however long the selected panel is.
+        const sec = sections[ARSENAL];
+        const vh = window.innerHeight;
+        const secTop = (sec?.top ?? 0) - window.scrollY;
+        const secBottom = secTop + (sec?.height ?? 0);
+        const w = sec ? ramp((0.8 * vh - secTop) / (0.4 * vh)) * ramp((secBottom - 0.3 * vh) / (0.35 * vh)) : 0;
+        let storyX = 0;
+        if (!mobile) {
           const i = Math.min(STORY.length - 1, Math.floor(s));
           const j = Math.min(STORY.length - 1, i + 1);
           const f = Math.min(1, Math.max(0, (s - i - 0.62) / 0.38));
           const e = f * f * f * (f * (f * 6 - 15) + 10);
-          panel.style.transform = `translate3d(${(sideX(i) * (1 - e) + sideX(j) * e).toFixed(3)}vw,0,0)`;
+          storyX = sideX(i) * (1 - e) + sideX(j) * e;
+        }
+        const prefs = getPrefs();
+        const skillX = mobile ? (prefs.skillSide === "left" ? -7 : 7) : prefs.skillSide === "left" ? 0 : 54;
+        const goal = storyX * (1 - w) + skillX * w;
+
+        if (w < 0.001 || reduced) {
+          // story mode (or reduced motion): follow the target directly
+          gx += (goal - gx) * (reduced && w > 0 ? 0.25 : 1);
+          gv = 0;
+          gk += (0 - gk) * 0.2;
+        } else {
+          // spring: ~1 s to settle, a hint of overshoot, interruptible by design
+          const k = 30, c = 2 * Math.sqrt(k) * 0.86;
+          const acc = k * (goal - gx) - c * gv;
+          gv += acc * dt;
+          gx += gv * dt;
+          gk += (Math.max(-1, Math.min(1, -acc / 260)) - gk) * Math.min(1, dt * 10);
+        }
+        const tilt = Math.max(-6, Math.min(6, gv * (mobile ? 0.22 : 0.06)));
+        panel.style.transform = `translate3d(${gx.toFixed(3)}vw,0,0) rotateY(${tilt.toFixed(2)}deg)`;
+        const skew = (gk * 2.6).toFixed(2);
+        if (skew !== lastSkew) {
+          lastSkew = skew;
+          canvas.style.transform = `skewX(${skew}deg)`;
+          if (tintRef.current) tintRef.current.style.transform = canvas.style.transform;
+        }
+        // light: blend the glow and the glass highlights towards the category accent
+        const wk = w.toFixed(2);
+        if (wk !== lastW || prefs.skillAccent !== lastAccent) {
+          lastW = wk;
+          lastAccent = prefs.skillAccent;
+          const root = document.documentElement.style;
+          root.setProperty("--skill-w", wk);
+          root.setProperty("--skill-accent", prefs.skillAccent);
         }
       }
     };
@@ -302,6 +357,7 @@ export default function FootageStage() {
       <div ref={panelRef} className="footage-panel">
         <div className="footage-glow" />
         <canvas ref={canvasRef} width={480} height={720} className="footage-canvas" />
+        <div ref={tintRef} className="footage-tint" />
       </div>
       <div className="scene-scrim" />
     </div>
